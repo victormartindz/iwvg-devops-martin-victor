@@ -28,27 +28,7 @@ class SearchesTest {
                 .collect(Collectors.toList()));
     }
 
-    void testFindUserIdByAnyProperFraction() {
-    }
-
-    void testFindUserNameByAnyImproperFraction() {
-    }
-
-    void testFindUserFamilyNameByAllSignFractionDistinct() {
-    }
-
-    void testFindDecimalFractionByUserName() {
-    }
-
-    void testFindDecimalFractionBySignFraction() {
-    }
-
     void testFindFractionAdditionByUserId() {
     }
 
-    void testFindFractionSubtractionByUserName() {
-    }
-
-    void testFindFractionMultiplicationByUserFamilyName() {
-    }
 }
