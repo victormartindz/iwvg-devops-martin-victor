@@ -58,11 +58,11 @@ public class Fraction {
     }
 
     public boolean isProper() {
-        return numerator > denominator;
+        return numerator < denominator;
     }
 
     public boolean isImproper() {
-        return numerator < denominator;
+        return numerator > denominator;
     }
 
     public boolean isEquivalent(Fraction comparedFraction) {
