@@ -21,6 +21,7 @@ public class Badge {
     private static final int TEXT_MARGIN = 12;
     private static final int CHARACTER_WIDTH = 6;
 
+
     public String generateBadge(String label, String value) {
         int widthLabel = TEXT_MARGIN + CHARACTER_WIDTH * label.length();
         int widthValue = TEXT_MARGIN + CHARACTER_WIDTH * value.length();
