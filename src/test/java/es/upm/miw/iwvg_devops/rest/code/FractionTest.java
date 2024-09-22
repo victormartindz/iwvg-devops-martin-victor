@@ -47,6 +47,16 @@ public class FractionTest {
         assertEquals(0.3,this.fraction.decimal());
     }
 
+    @Test
+    void testIsProper() {
+        assertTrue(this.fraction.isProper());
+    }
+
+    @Test
+    void  testIsImproper() {
+        assertFalse(this.fraction.isImproper());
+    }
+
      @Test
     void testToString() {
         assertEquals("Fraction{numerator=3, denominator=10}",this.fraction.toString());
