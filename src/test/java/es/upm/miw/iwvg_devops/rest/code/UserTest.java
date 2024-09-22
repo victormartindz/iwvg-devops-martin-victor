@@ -1,7 +1,6 @@
 package es.upm.miw.iwvg_devops.rest.code;
 
-import es.upm.miw.iwvg_devops.code.Fraction;
-import org.assertj.core.util.Arrays;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
@@ -83,7 +82,6 @@ public class UserTest {
 
     @Test
     public void testFullName() {
-
         assertEquals("Stanislaw Lem", user.fullName());
     }
 
