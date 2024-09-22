@@ -31,7 +31,10 @@ public class Searches {
     }
 
     public Fraction findFractionAdditionByUserId(String id) {
-        return null;
+        return new UsersDatabase().findAll()
+                .filter(user -> id.equals(user.getId()))
+                .flatMap(user -> user.getFractions().stream())
+                .reduce(new Fraction(0,1), Fraction::add);
     }
 
     public Stream<String> findUserIdByAllProperFraction() {
