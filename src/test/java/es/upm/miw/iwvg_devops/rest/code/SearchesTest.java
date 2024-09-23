@@ -75,4 +75,14 @@ class SearchesTest {
         assertTrue(result.contains("8"));
     }
 
+    @Test
+    void testFindHighestFraction() {
+        Searches searches = new Searches();
+        Fraction highestFraction = searches.findHighestFraction();
+        assertNotNull(highestFraction);
+        assertEquals(2.0, highestFraction.decimal());
+        assertEquals(2, highestFraction.getNumerator());
+        assertEquals(1,highestFraction.getDenominator());
+    }
+
 }

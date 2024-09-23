@@ -3,6 +3,7 @@ package es.upm.miw.iwvg_devops.code;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Stream;
@@ -60,7 +61,13 @@ public class Searches {
     }
 
     public Fraction findHighestFraction() {
-        return null;
+        Comparator<Fraction> fractionComparator = Comparator.comparing(Fraction::decimal);
+
+        return new UsersDatabase().findAll()
+                .flatMap(user -> user.getFractions().stream())
+                .filter(fraction -> fraction.getDenominator() != 0)
+                .max(fractionComparator)
+                .orElseThrow(() -> new RuntimeException("No fraction found."));
     }
 
     public Stream<Double> findDecimalFractionByNegativeSignFraction() {
