@@ -82,16 +82,16 @@ class FractionTest {
     void testMultiply() {
         Fraction fractionToMultiply = new Fraction(2, 5);
         Fraction result = fraction.multiply(fractionToMultiply);
-        assertEquals(15, result.getNumerator());
-        assertEquals(20, result.getDenominator());
+        assertEquals(6, result.getNumerator());
+        assertEquals(50, result.getDenominator());
     }
 
     @Test
     void testDivide() {
         Fraction fractionToDivide = new Fraction(2, 5);
         Fraction result = fraction.divide(fractionToDivide);
-        assertEquals(6, result.getNumerator());
-        assertEquals(50, result.getDenominator());
+        assertEquals(15, result.getNumerator());
+        assertEquals(20, result.getDenominator());
     }
 
      @Test
