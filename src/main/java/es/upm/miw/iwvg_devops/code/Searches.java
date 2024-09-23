@@ -1,8 +1,5 @@
 package es.upm.miw.iwvg_devops.code;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -10,7 +7,6 @@ import java.util.stream.Stream;
 
 public class Searches {
 
-    private static final Logger logger = LogManager.getLogger(Fraction.class);
 
     public Stream<String> findUserFamilyNameByUserNameDistinct(String userName) {
         return new UsersDatabase().findAll()

@@ -10,7 +10,7 @@ import es.upm.miw.iwvg_devops.code.Fraction;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserTest {
+class UserTest {
 
     private User user;
 
@@ -20,13 +20,13 @@ public class UserTest {
     }
 
     @Test
-    public void testDefaultConstructor() {
+    void testDefaultConstructor() {
         User user = new User();
         assertTrue((user.getFractions().isEmpty()));
     }
 
     @Test
-    public void testParametrizedConstructor() {
+    void testParametrizedConstructor() {
         List<Fraction> fractionList = new ArrayList<>();
         fractionList.add(new Fraction(1, 2));
         fractionList.add(new Fraction(3, 10));
@@ -38,34 +38,34 @@ public class UserTest {
     }
 
     @Test
-    public void testGetId(){
+    void testGetId(){
         assertEquals("1", user.getId());
     }
 
     @Test
-    public void testGetName(){
+    void testGetName(){
         assertEquals("Stanislaw", user.getName());
     }
 
     @Test
-    public void testSetName(){
+    void testSetName(){
         user.setName("Isaac");
         assertEquals("Isaac", user.getName());
     }
 
     @Test
-    public void testGetFamilyName(){
+    void testGetFamilyName(){
         assertEquals("Lem", user.getFamilyName());
     }
 
     @Test
-    public void testSetFamilyName(){
+    void testSetFamilyName(){
         user.setFamilyName("Asimov");
         assertEquals("Asimov", user.getFamilyName());
     }
 
     @Test
-    public void testGetFractions() {
+    void testGetFractions() {
         user.addFraction(new Fraction(1, 3));
         Fraction fraction = user.getFractions().get(0);
         assertEquals(1, fraction.getNumerator());
@@ -73,7 +73,7 @@ public class UserTest {
     }
 
     @Test
-    public void testSetFractions() {
+    void testSetFractions() {
         List<Fraction> fractionList = new ArrayList<>();
         fractionList.add(new Fraction(2, 5));
         user.setFractions(fractionList);
@@ -81,17 +81,17 @@ public class UserTest {
     }
 
     @Test
-    public void testFullName() {
+    void testFullName() {
         assertEquals("Stanislaw Lem", user.fullName());
     }
 
     @Test
-    public void TestInitials() {
+    void TestInitials() {
         assertEquals("S.",user.initials());
     }
 
     @Test
-    public void testToString() {
+    void testToString() {
         List<Fraction> fractions = new ArrayList<>();
         fractions.add(new Fraction(1, 3));
         fractions.add(new Fraction(2, 5));
