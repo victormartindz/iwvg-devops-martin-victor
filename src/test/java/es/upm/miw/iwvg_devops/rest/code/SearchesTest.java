@@ -41,7 +41,7 @@ class SearchesTest {
     }
 
     @Test
-    void testFindFractionAdditionByUserId_NonExistantUser() {
+    void testFindFractionAdditionByUserId_NonExistentUser() {
         assertThrows(RuntimeException.class, () -> {
             new Searches().findFractionAdditionByUserId("7");
         });
@@ -83,6 +83,17 @@ class SearchesTest {
         assertEquals(2.0, highestFraction.decimal());
         assertEquals(2, highestFraction.getNumerator());
         assertEquals(1,highestFraction.getDenominator());
+    }
+
+    @Test
+    void testFindDecimalFractionByNegativeSignFraction() {
+        Searches searches = new Searches();
+
+        List<Double> expectedDecimals = List.of(-0.2, -0.5);
+        List<Double> actualDecimals = searches.findDecimalFractionByNegativeSignFraction().toList();
+
+        assertEquals(expectedDecimals.size(), actualDecimals.size());
+        assertTrue(actualDecimals.containsAll(expectedDecimals));
     }
 
 }
