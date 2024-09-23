@@ -95,11 +95,11 @@ public class Fraction {
         return result;
     }
 
-    public Fraction multiply (Fraction multiplierFraction) {
+    public Fraction divide (Fraction multiplierFraction) {
         return new Fraction(this.numerator * multiplierFraction.denominator, this.denominator * multiplierFraction.numerator);
     }
 
-    public Fraction divide (Fraction divisorFraction) {
+    public Fraction multiply (Fraction divisorFraction) {
         return new Fraction(this.numerator * divisorFraction.numerator, this.denominator * divisorFraction.denominator);
     }
 
