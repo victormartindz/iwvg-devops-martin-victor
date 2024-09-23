@@ -59,4 +59,20 @@ class SearchesTest {
         assertThrows(ArithmeticException.class, () -> new Searches().findFractionAdditionByUserId("6"));
     }
 
+    @Test
+    void testFindUserIdByAllProperFraction() {
+        Searches searches = new Searches();
+
+        List<String> result = searches.findUserIdByAllProperFraction().toList();
+
+        assertEquals(1,result.size());
+        assertFalse(result.contains("3"));
+        assertFalse(result.contains("4"));
+        assertFalse(result.contains("1"));
+        assertFalse(result.contains("2"));
+        assertFalse(result.contains("5"));
+        assertFalse(result.contains("6"));
+        assertTrue(result.contains("8"));
+    }
+
 }
