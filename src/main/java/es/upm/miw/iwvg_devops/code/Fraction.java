@@ -58,29 +58,41 @@ public class Fraction {
     }
 
     public boolean isProper() {
-        return numerator < denominator;
+        return numerator > 0 && denominator > 0 && numerator < denominator;
     }
 
     public boolean isImproper() {
-        return numerator > denominator;
+        return numerator < 0 || denominator < 0 || numerator >= denominator;
     }
 
     public boolean isEquivalent(Fraction comparedFraction) {
         return this.numerator * comparedFraction.denominator == this.denominator * comparedFraction.numerator;
     }
 
-    public Fraction add (Fraction addedFraction) {
-        int commonDenominator;
-        int newNumerator;
-        if (this.denominator == addedFraction.denominator) {
-            newNumerator = this.numerator + addedFraction.numerator;
-            commonDenominator = this.denominator;
-        } else {
-            commonDenominator = this.denominator * addedFraction.denominator;
-            newNumerator = (this.numerator * addedFraction.denominator) + (this.denominator * addedFraction.numerator);
-        }
+    public void simplify() {
+        int gcd = gcd(this.numerator, this.denominator);
+        this.numerator = this.numerator / gcd;
+        this.denominator = this.denominator / gcd;
+    }
 
-        return new Fraction(newNumerator, commonDenominator);
+    private int gcd(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+
+    public Fraction add (Fraction addedFraction) {
+        int newDenominator;
+        int newNumerator;
+
+            newDenominator = this.denominator * addedFraction.denominator;
+            newNumerator = (this.numerator * addedFraction.denominator) + (this.denominator * addedFraction.numerator);
+
+            Fraction result = new Fraction(newNumerator, newDenominator);
+            result.simplify();
+
+        return result;
     }
 
     public Fraction multiply (Fraction multiplierFraction) {

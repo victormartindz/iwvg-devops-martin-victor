@@ -66,16 +66,16 @@ class FractionTest {
     void testAdd() {
         Fraction fractionToAdd = new Fraction(2,5);
         Fraction result = this.fraction.add(fractionToAdd);
-        assertEquals(20 + 15, result.getNumerator());
-        assertEquals(50, result.getDenominator());
+        assertEquals(7, result.getNumerator());
+        assertEquals(10, result.getDenominator());
     }
 
     @Test
     void testAddSameDenominator() {
         Fraction fractionToAdd = new Fraction(2,10);
         Fraction result = this.fraction.add(fractionToAdd);
-        assertEquals(2 + 3, result.getNumerator());
-        assertEquals(10, result.getDenominator());
+        assertEquals(1, result.getNumerator());
+        assertEquals(2, result.getDenominator());
     }
 
     @Test
